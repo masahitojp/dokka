@@ -152,7 +152,7 @@ private fun Project.configureSonatypePublication(vararg publications: String) {
     }
 }
 
-private fun MavenPublication.configurePom(projectName: String) {
+fun MavenPublication.configurePom(projectName: String) {
     pom {
         name.set(projectName)
         description.set("Dokka is a documentation engine for Kotlin and Java, performing the same function as Javadoc for Java")
