@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") apply false
     id("java")
     id("org.jetbrains.dokka") version "1.4.10.2"
+    id("org.jlleitschuh.gradle.ktlint") version "9.4.1"
 }
 
 val dokka_version: String by project
@@ -45,6 +46,7 @@ subprojects {
         plugin("java")
         plugin("signing")
         plugin("org.jetbrains.dokka")
+        plugin("org.jlleitschuh.gradle.ktlint")
     }
 
     // Gradle metadata
@@ -70,6 +72,11 @@ subprojects {
             archiveClassifier.set("javadoc")
             from(dokkaOutputDir)
         }
+    }
+
+    ktlint {
+        debug.set(true)
+        disabledRules.set(listOf("no-unit-return", "no-wildcard-imports"))
     }
 }
 

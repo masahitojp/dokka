@@ -1,0 +1,3 @@
+[*.{kt,kts}]
+kotlin_imports_layout=idea # default IntelliJ IDEA style, same as "ascii", but with "java", "javax", "kotlin" and alias imports in the end of the imports list
+ij_kotlin_imports_layout=*
